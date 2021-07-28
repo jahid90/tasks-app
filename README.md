@@ -32,6 +32,9 @@ services:
     command:
       - --api=true
       - --providers.docker
+      ...
+    networks:
+      - traefik
     ...
 ```
 
