@@ -1,0 +1,731 @@
+openapi: 3.0.2
+
+info:
+  title: Tasks API
+  description: Backend for the tasks app
+  version: 0.1.0
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: http://localhost:8080
+    description: Development Server
+  - url: https://tasks.jahiduls.local/api
+    description: Docker Server
+  - url: https://tasks.jahiduls.kube/api
+    description: Kubernetes Server
+
+tags:
+  - name: health
+    description: Health related APIs
+  - name: workspace
+    description: Workspace related APIs
+  - name: board
+    description: Board related APIs
+  - name: lane
+    description: Lane related APIs
+  - name: task
+    description: Tasks related APIs
+  - name: comment
+    description: Comments related APIs
+
+paths:
+  /ping:
+    get:
+      description: Health check
+      operationId: pingHealth
+      tags:
+        - health
+      responses:
+        '200':
+          $ref: '#/components/responses/PingResponse'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /deep-ping:
+    get:
+      description: Deep health check
+      operationId: deepPingHealth
+      tags:
+        - health
+      responses:
+        '200':
+          $ref: '#/components/responses/PingResponse'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /workspace:
+    get:
+      description: Fetch all workspaces
+      operationId: getAllWorkspaces
+      tags:
+        - workspace
+      parameters:
+        - $ref: '#/components/parameters/PageOffset'
+      responses:
+        '200':
+          $ref: '#/components/responses/GetWorkspacesResponse'
+          # should return only ids? applicable to all fetchAlls
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      description: Create a workspace
+      operationId: createWorkspace
+      tags:
+        - workspace
+      requestBody:
+        $ref: '#/components/requestBodies/WorkspacePayload'
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /workspace/{id}:
+    get:
+      description: Fetch a workspace
+      operationId: getWorkspace
+      tags:
+        - workspace
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      responses:
+        '200':
+          $ref: '#/components/responses/GetWorkspaceResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      description: Update a workspace
+      operationId: updateWorkspace
+      tags:
+        - workspace
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      requestBody:
+        $ref: '#/components/requestBodies/WorkspacePayload'
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404': 
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      description: Delete a workspace
+      operationId: deleteWorkspace
+      tags:
+        - workspace
+      parameters:
+        - $ref: '#/components/parameters/WorkspaceId'
+      responses:
+        '204': 
+          $ref: '#/components/responses/NoContent'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /board:
+    get: 
+      description: Fetch all boards
+      operationId: getAllBoards
+      tags:
+        - board
+      parameters:
+        - $ref: '#/components/parameters/PageOffset'
+        - $ref: '#/components/parameters/WorkspaceId'
+      responses:
+        '200':
+          $ref: '#/components/responses/GetBoardsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      description: Create a board
+      operationId: createBoard
+      tags:
+        - board
+      requestBody:
+        $ref: '#/components/requestBodies/BoardPayload'
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /board/{id}:
+    get:
+      description: Fetch a board
+      operationId: getBoard
+      tags:
+        - board
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      responses:
+        '200':
+          $ref: '#/components/responses/GetWorkspaceResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      description: Update a board
+      operationId: updateBoard
+      tags:
+        - board
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      requestBody:
+        $ref: '#/components/requestBodies/BoardPayload'
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      description: Delete a board
+      operationId: deleteBoard
+      tags:
+        - board
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      responses:
+        '204': 
+          $ref: '#/components/responses/NoContent'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /lane:
+    get: 
+      description: Fetch all lanes
+      operationId: getAllLanes
+      tags:
+        - lane
+      parameters:
+        - $ref: '#/components/parameters/PageOffset'
+        - $ref: '#/components/parameters/BoardId'
+      responses:
+        '200':
+          $ref: '#/components/responses/GetLanesResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      description: Create a lane
+      operationId: createLane
+      tags:
+        - lane
+      requestBody:
+        $ref: '#/components/requestBodies/LanePayload'
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /lane/{id}:
+    get:
+      description: Fetch a lane
+      operationId: getLane
+      tags:
+        - lane
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      responses:
+        '200':
+          $ref: '#/components/responses/GetLaneResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      description: Update a lane
+      operationId: updateLane
+      tags:
+        - lane
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      requestBody:
+        $ref: '#/components/requestBodies/LanePayload'
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      description: Delete a lane
+      operationId: deleteLane
+      tags:
+        - lane
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      responses:
+        '204': 
+          $ref: '#/components/responses/NoContent'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /task:
+    get: 
+      description: Fetch all tasks
+      operationId: getAllTasks
+      tags:
+        - task
+      parameters:
+        - $ref: '#/components/parameters/PageOffset'
+        - $ref: '#/components/parameters/LaneId'
+      responses:
+        '200':
+          $ref: '#/components/responses/GetLanesResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      description: Create a task
+      operationId: createTask
+      tags:
+        - task
+      requestBody:
+        $ref: '#/components/requestBodies/TaskPayload'
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /task/{id}:
+    get:
+      description: Fetch a task
+      operationId: getTask
+      tags:
+        - task
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      responses:
+        '200':
+          $ref: '#/components/responses/GetTaskResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      description: Update a task
+      operationId: updateTask
+      tags:
+        - task
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      requestBody:
+        $ref: '#/components/requestBodies/TaskPayload'
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      description: Delete a task
+      operationId: deleteTask
+      tags:
+        - task
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      responses:
+        '204': 
+          $ref: '#/components/responses/NoContent'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /comment:
+    get: 
+      description: Fetch all comments
+      operationId: getAllComments
+      tags:
+        - comment
+      parameters:
+        - $ref: '#/components/parameters/PageOffset'
+        - $ref: '#/components/parameters/TaskId'
+      responses:
+        '200':
+          $ref: '#/components/responses/GetCommentsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      description: Create a comment
+      operationId: createComment
+      tags:
+        - comment
+      requestBody:
+        $ref: '#/components/requestBodies/CommentPayload'
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /comment/{id}:
+    get:
+      description: Fetch a comment
+      operationId: getComment
+      tags:
+        - comment
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      responses:
+        '200':
+          $ref: '#/components/responses/GetCommentResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      description: Update a comment
+      operationId: updateComment
+      tags:
+        - comment
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      requestBody:
+        $ref: '#/components/requestBodies/CommentPayload'
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      description: Delete a comment
+      operationId: deleteComment
+      tags:
+        - comment
+      parameters:
+        - $ref: '#/components/parameters/Uuid'
+      responses:
+        '204': 
+          $ref: '#/components/responses/NoContent'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+components:
+  parameters:
+    BoardId:
+      name: boardId
+      in: query
+      required: true
+      schema:
+        type: string
+    Uuid:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    LaneId:
+      name: laneId
+      in: query
+      required: true
+      schema:
+        type: string
+    PageOffset:
+      name: page
+      in: query
+      description: Specifies the page
+      schema: 
+        type: integer
+        format: int32
+    TaskId:
+      name: taskId
+      in: query
+      required: true
+      schema:
+        type: string
+    WorkspaceId:
+      name: workspaceId
+      in: query
+      required: true
+      schema:
+        type: string
+  requestBodies:
+    BoardPayload:
+      required: true
+      content:
+        application/json:
+          schema: 
+            $ref: '#/components/schemas/Board'
+    CommentPayload:
+      required: true
+      content:
+        application/json:
+          schema: 
+            $ref: '#/components/schemas/Comment'
+    LanePayload:
+      required: true
+      content:
+        application/json:
+          schema: 
+            $ref: '#/components/schemas/Lane'
+    TaskPayload:
+      required: true
+      content:
+        application/json:
+          schema: 
+            $ref: '#/components/schemas/Task'
+    WorkspacePayload:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Workspace'
+  responses:
+    Created:
+      description: Created
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    GetBoardResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Board'
+    GetBoardsResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items: 
+              $ref: '#/components/schemas/Board'
+    GetCommentResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Comment'
+    GetCommentsResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items: 
+              $ref: '#/components/schemas/Comment'
+    GetLaneResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Lane'
+    GetLanesResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items: 
+              $ref: '#/components/schemas/Lane'
+    GetTaskResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Task'
+    GetTasksResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items: 
+              $ref: '#/components/schemas/Task'
+    GetWorkspaceResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Workspace'
+    GetWorkspacesResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items: 
+              $ref: '#/components/schemas/Workspace'
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NoContent:
+      description: No Content
+    NotFound:
+      description: Not Found
+    PingResponse:
+      description: Success
+      content:
+        text/plain:
+          schema:
+            type: string
+    ServiceUnavailable:
+      description: Service Unavailable
+    Success:
+      description: OK
+  schemas:
+    Board:
+      type: object
+      required:
+        - workspaceId
+        - name
+      properties:
+        uuid:
+          type: string
+          format: uuid
+        workspaceId:
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
+    Comment:
+      type: object
+      required:
+        - taskId
+        - message
+      properties:
+        taskId:
+          type: string
+          format: uuid
+        uuid:
+          type: string
+          format: uuid
+        message:
+          type: string
+        last_updated:
+          type: string
+          format: timestamp
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        code:
+          type: number
+          format: int32
+        message:
+          type: string
+    Lane:
+      type: object
+      required:
+        - boardId
+        - name
+        - position
+      properties:
+        uuid: 
+          type: string
+          format: uuid
+        boardId:
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
+        position:
+          type: number
+          format: int32
+    Task:
+      type: object
+      required:
+        - laneId
+        - name
+      properties:
+        uuid: 
+          type: string
+          format: uuid
+        laneId:
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskItem'
+    TaskItem:
+      type: object
+      required:
+        - taskId
+        - type
+        - description
+      properties:
+        uuid: 
+          type: string
+          format: uuid
+        taskId:
+          type: string
+          format: uuid
+        type:
+          type: string # enum (text, checkbox, etc.)
+        description:
+          type: string
+    Workspace:
+      type: object
+      required:
+        - name
+      properties:
+        uuid: 
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
