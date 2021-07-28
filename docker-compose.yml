@@ -1,0 +1,51 @@
+version: '3'
+
+networks:
+  traefik:
+    name: traefik
+    driver: bridge
+  backend:
+    name: backend
+    driver: bridge
+
+services:
+  service:
+    build: ./service
+    image: tasks-service:local
+    container_name: tasks-service
+    restart: unless-stopped
+    networks:
+      - traefik
+      - backend
+    expose:
+      - 8080
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.tasks-service.entryPoints=websecure
+      - traefik.http.routers.tasks-service.rule=Host(`tasks.jahiduls.local`) && PathPrefix(`/api`)
+      - traefik.http.routers.tasks-service.tls=true
+      - traefik.http.routers.tasks-service.middlewares=tasks-service-stripprefix@docker
+      - traefik.http.middlewares.tasks-service-stripprefix.stripprefix.prefixes=/api
+  openapi:
+    image: swaggerapi/swagger-ui:latest
+    container_name: openapi
+    restart: unless-stopped
+    networks:
+      - traefik
+    environment:
+      - SWAGGER_JSON=/var/specs/tasks.yaml
+    volumes:
+      - ./spec:/var/specs:ro
+    expose:
+      - 8080
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.tasks-openapi.rule=Host(`tasks.jahiduls.local`) && PathPrefix(`/openapi`)
+      - traefik.http.routers.tasks-openapi.entryPoints=websecure
+      - traefik.http.routers.tasks-openapi.tls=true
+      - traefik.http.routers.tasks-openapi.service=tasks-openapi@docker
+      - traefik.http.services.tasks-openapi.loadbalancer.server.port=8080
+      - traefik.http.routers.tasks-openapi.middlewares=tasks-openapi-stripprefix@docker
+      - traefik.http.middlewares.tasks-openapi-stripprefix.stripprefix.prefixes=/openapi
+
+

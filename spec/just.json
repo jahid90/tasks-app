@@ -1,6 +1,0 @@
-{
-    "version": "4",
-    "commands": {
-        "server:start": "docker run -d -p 8000:8080 -e SWAGGER_JSON=/var/specs/tasks.yaml -v $PWD:/var/specs swaggerapi/swagger-ui"
-    }
-}
