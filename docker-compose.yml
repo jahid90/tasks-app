@@ -18,7 +18,7 @@ services:
       - traefik
       - backend
     expose:
-      - 8080
+      - 80
     labels:
       - traefik.enable=true
       - traefik.http.routers.tasks-service.entryPoints=websecure
@@ -28,7 +28,7 @@ services:
       - traefik.http.middlewares.tasks-service-stripprefix.stripprefix.prefixes=/api
   openapi:
     image: swaggerapi/swagger-ui:latest
-    container_name: openapi
+    container_name: tasks-openapi
     restart: unless-stopped
     networks:
       - traefik
@@ -47,5 +47,17 @@ services:
       - traefik.http.services.tasks-openapi.loadbalancer.server.port=8080
       - traefik.http.routers.tasks-openapi.middlewares=tasks-openapi-stripprefix@docker
       - traefik.http.middlewares.tasks-openapi-stripprefix.stripprefix.prefixes=/openapi
-
-
+  client:
+    build: ./client
+    image: tasks-ui:local
+    container_name: tasks-ui
+    restart: unless-stopped
+    networks:
+      - traefik
+    expose:
+      - 80
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.tasks-ui.rule=Host(`tasks.jahiduls.local`)
+      - traefik.http.routers.tasks-ui.entryPoints=websecure
+      - traefik.http.routers.tasks-ui.tls=true
