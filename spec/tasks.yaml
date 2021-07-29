@@ -696,6 +696,9 @@ components:
           type: string
         description:
           type: string
+        position:
+          type: number
+          format: int32
         items:
           type: array
           items:
