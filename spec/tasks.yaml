@@ -112,7 +112,7 @@ paths:
           $ref: '#/components/responses/Success'
         '400':
           $ref: '#/components/responses/BadRequest'
-        '404': 
+        '404':
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
@@ -122,16 +122,16 @@ paths:
       tags:
         - workspace
       parameters:
-        - $ref: '#/components/parameters/WorkspaceId'
+        - $ref: '#/components/parameters/Uuid'
       responses:
-        '204': 
+        '204':
           $ref: '#/components/responses/NoContent'
         '404':
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
   /board:
-    get: 
+    get:
       description: Fetch all boards
       operationId: getAllBoards
       tags:
@@ -203,14 +203,14 @@ paths:
       parameters:
         - $ref: '#/components/parameters/Uuid'
       responses:
-        '204': 
+        '204':
           $ref: '#/components/responses/NoContent'
         '404':
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
   /lane:
-    get: 
+    get:
       description: Fetch all lanes
       operationId: getAllLanes
       tags:
@@ -282,14 +282,14 @@ paths:
       parameters:
         - $ref: '#/components/parameters/Uuid'
       responses:
-        '204': 
+        '204':
           $ref: '#/components/responses/NoContent'
         '404':
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
   /task:
-    get: 
+    get:
       description: Fetch all tasks
       operationId: getAllTasks
       tags:
@@ -361,14 +361,14 @@ paths:
       parameters:
         - $ref: '#/components/parameters/Uuid'
       responses:
-        '204': 
+        '204':
           $ref: '#/components/responses/NoContent'
         '404':
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
   /comment:
-    get: 
+    get:
       description: Fetch all comments
       operationId: getAllComments
       tags:
@@ -440,7 +440,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/Uuid'
       responses:
-        '204': 
+        '204':
           $ref: '#/components/responses/NoContent'
         '404':
           $ref: '#/components/responses/NotFound'
@@ -471,7 +471,7 @@ components:
       name: page
       in: query
       description: Specifies the page
-      schema: 
+      schema:
         type: integer
         format: int32
     TaskId:
@@ -491,25 +491,25 @@ components:
       required: true
       content:
         application/json:
-          schema: 
+          schema:
             $ref: '#/components/schemas/Board'
     CommentPayload:
       required: true
       content:
         application/json:
-          schema: 
+          schema:
             $ref: '#/components/schemas/Comment'
     LanePayload:
       required: true
       content:
         application/json:
-          schema: 
+          schema:
             $ref: '#/components/schemas/Lane'
     TaskPayload:
       required: true
       content:
         application/json:
-          schema: 
+          schema:
             $ref: '#/components/schemas/Task'
     WorkspacePayload:
       required: true
@@ -538,7 +538,7 @@ components:
         application/json:
           schema:
             type: array
-            items: 
+            items:
               $ref: '#/components/schemas/Board'
     GetCommentResponse:
       description: Success
@@ -552,7 +552,7 @@ components:
         application/json:
           schema:
             type: array
-            items: 
+            items:
               $ref: '#/components/schemas/Comment'
     GetLaneResponse:
       description: Success
@@ -566,7 +566,7 @@ components:
         application/json:
           schema:
             type: array
-            items: 
+            items:
               $ref: '#/components/schemas/Lane'
     GetTaskResponse:
       description: Success
@@ -580,7 +580,7 @@ components:
         application/json:
           schema:
             type: array
-            items: 
+            items:
               $ref: '#/components/schemas/Task'
     GetWorkspaceResponse:
       description: Success
@@ -594,7 +594,7 @@ components:
         application/json:
           schema:
             type: array
-            items: 
+            items:
               $ref: '#/components/schemas/Workspace'
     InternalServerError:
       description: Internal Server Error
@@ -667,7 +667,7 @@ components:
         - name
         - position
       properties:
-        uuid: 
+        uuid:
           type: string
           format: uuid
         boardId:
@@ -686,7 +686,7 @@ components:
         - laneId
         - name
       properties:
-        uuid: 
+        uuid:
           type: string
           format: uuid
         laneId:
@@ -707,7 +707,7 @@ components:
         - type
         - description
       properties:
-        uuid: 
+        uuid:
           type: string
           format: uuid
         taskId:
@@ -722,7 +722,7 @@ components:
       required:
         - name
       properties:
-        uuid: 
+        uuid:
           type: string
           format: uuid
         name:
