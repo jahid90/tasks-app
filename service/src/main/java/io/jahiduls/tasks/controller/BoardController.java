@@ -21,7 +21,9 @@ import java.util.List;
 public class BoardController {
 
     @GetMapping("")
-    public List<BoardResource> fetchAllBoards(@PathParam("workspaceId") final String workspaceId) {
+    public List<BoardResource> fetchAllBoards(@PathParam("workspaceId") final String workspaceId,
+                                              @PathParam("page") final int page) {
+
         throw new NotYetImplementedException();
     }
 
