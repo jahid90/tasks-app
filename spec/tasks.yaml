@@ -34,7 +34,7 @@ paths:
   /ping:
     get:
       description: Health check
-      operationId: pingHealth
+      operationId: healthCheck
       tags:
         - health
       responses:
@@ -45,7 +45,7 @@ paths:
   /deep-ping:
     get:
       description: Deep health check
-      operationId: deepPingHealth
+      operationId: deepHealthCheck
       tags:
         - health
       responses:
