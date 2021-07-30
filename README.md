@@ -1,3 +1,5 @@
+[![ServerCI](https://github.com/jahid90/tasks-app/actions/workflows/server.yml/badge.svg)](https://github.com/jahid90/tasks-app/actions/workflows/server.yml) [![ClientCI](https://github.com/jahid90/tasks-app/actions/workflows/client.yml/badge.svg)](https://github.com/jahid90/tasks-app/actions/workflows/client.yml)
+
 # Tasks App
 
 A web app to manage tasks and task boards.
