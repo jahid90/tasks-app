@@ -1,11 +1,15 @@
 plugins {
 	id 'org.springframework.boot' version '2.5.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'com.google.cloud.tools.jib' version '3.1.2'
 	id 'java'
 }
 
+jib.from.image = "adoptopenjdk:16-jre-openj9"
+jib.to.image = 'tasks-service:local'
+
 group = 'io.jahiduls'
-version = '0.0.1-SNAPSHOT'
+version = '0.1.0'
 sourceCompatibility = '16'
 
 configurations {

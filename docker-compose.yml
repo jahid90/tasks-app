@@ -10,7 +10,7 @@ networks:
 
 services:
   service:
-    build: ./service
+    #build: ./service
     image: tasks-service:local
     container_name: tasks-service
     restart: unless-stopped
