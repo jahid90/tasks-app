@@ -11,7 +11,7 @@ info:
 servers:
   - url: http://localhost:8080
     description: Development Server
-  - url: https://tasks.jahiduls.local/api
+  - url: https://tasks.jahiduls.mint/api
     description: Docker Server
   - url: https://tasks.jahiduls.kube/api
     description: Kubernetes Server

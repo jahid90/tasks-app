@@ -22,7 +22,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.tasks-service.entryPoints=websecure
-      - traefik.http.routers.tasks-service.rule=Host(`tasks.jahiduls.local`) && PathPrefix(`/api`)
+      - traefik.http.routers.tasks-service.rule=Host(`tasks.jahiduls.mint`) && PathPrefix(`/api`)
       - traefik.http.routers.tasks-service.tls=true
       - traefik.http.routers.tasks-service.middlewares=tasks-service-stripprefix@docker
       - traefik.http.middlewares.tasks-service-stripprefix.stripprefix.prefixes=/api
@@ -40,7 +40,7 @@ services:
       - 8080
     labels:
       - traefik.enable=true
-      - traefik.http.routers.tasks-openapi.rule=Host(`tasks.jahiduls.local`) && PathPrefix(`/openapi`)
+      - traefik.http.routers.tasks-openapi.rule=Host(`tasks.jahiduls.mint`) && PathPrefix(`/openapi`)
       - traefik.http.routers.tasks-openapi.entryPoints=websecure
       - traefik.http.routers.tasks-openapi.tls=true
       - traefik.http.routers.tasks-openapi.service=tasks-openapi@docker
@@ -58,6 +58,6 @@ services:
       - 80
     labels:
       - traefik.enable=true
-      - traefik.http.routers.tasks-ui.rule=Host(`tasks.jahiduls.local`)
+      - traefik.http.routers.tasks-ui.rule=Host(`tasks.jahiduls.mint`)
       - traefik.http.routers.tasks-ui.entryPoints=websecure
       - traefik.http.routers.tasks-ui.tls=true
