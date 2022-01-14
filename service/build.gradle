@@ -5,8 +5,9 @@ plugins {
 	id 'java'
 }
 
-jib.from.image = "adoptopenjdk:16-jre-openj9"
-jib.to.image = 'tasks-service:local'
+jib.allowInsecureRegistries = true
+jib.from.image = 'registry.jahiduls.mint/adoptopenjdk:16-jre-openj9'
+jib.to.image = 'registry.jahiduls.mint/tasks-service:local'
 
 group = 'io.jahiduls'
 version = '0.1.0'

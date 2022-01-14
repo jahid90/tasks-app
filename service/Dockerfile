@@ -1,4 +1,4 @@
-FROM adoptopenjdk:16-jdk-openj9 as builder
+FROM registry.jahiduls.mint/adoptopenjdk:16-jdk-openj9 as builder
 
 WORKDIR /artifacts
 
@@ -8,7 +8,7 @@ WORKDIR /artifacts
 COPY . ./
 RUN ./gradlew bootJar
 
-FROM adoptopenjdk:16-jre-openj9
+FROM registry.jahiduls.mint/adoptopenjdk:16-jre-openj9
 
 WORKDIR /app
 
