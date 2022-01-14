@@ -15,13 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.websocket.server.PathParam;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/workspace")
 public class WorkspaceController {
 
     @GetMapping("")
-    public List<WorkspaceResource> fetchAllWorkspaces(@PathParam("page") final int page) {
+    public List<WorkspaceResource> fetchAllWorkspaces(@PathParam("page") final Optional<Integer> page) {
         throw new NotYetImplementedException();
     }
 
