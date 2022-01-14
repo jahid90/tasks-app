@@ -16,7 +16,7 @@ Clone the project.
 $ git clone git@github.com:jahid90/tasks-app.git
 ```
 
-Setup a traefik docker container as a proxy and attach it to a `bridge` network named `traefik`.
+Setup a `traefik` docker container as a proxy and attach it to a `bridge` network named `traefik`.
 
 ```sh
 $ cd traefik-proxy
@@ -40,12 +40,12 @@ services:
     ...
 ```
 
-Create a dns entry for `tasks.jahiduls.local`
+Create a dns entry for `tasks.jahiduls.mint`
 
 ```sh
 $ cat /etc/hosts
 ...
-127.0.0.1       tasks.jahiduls.local
+127.0.0.1       tasks.jahiduls.mint
 ```
 
 Launch the project
@@ -55,4 +55,4 @@ $ cd tasks-app
 $ docker-compose up -d
 ```
 
-The OpenAPI server should be available at: https://tasks.jahiduls.local/openapi and the app itself at https://tasks.jahiduls.local
+The OpenAPI server should be available at: https://tasks.jahiduls.mint/openapi and the app itself at https://tasks.jahiduls.mint. If SSL/TLS is not enabled for the `traefik proxy`, use `http` instead. If the service, client and openapi spec servers are served under separate domains, the service will have to be updated to allow `CORS`.
