@@ -2,6 +2,7 @@ package io.jahiduls.tasks.controller;
 
 import io.jahiduls.tasks.exceptions.NotYetImplementedException;
 import io.jahiduls.tasks.resource.WorkspaceResource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,12 +18,16 @@ import javax.websocket.server.PathParam;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @RestController
 @RequestMapping("/workspace")
 public class WorkspaceController {
 
     @GetMapping("")
     public List<WorkspaceResource> fetchAllWorkspaces(@PathParam("page") final Optional<Integer> page) {
+
+        page.ifPresent(pageNum -> log.info("Looking for page number: {}", pageNum));
+
         throw new NotYetImplementedException();
     }
 
