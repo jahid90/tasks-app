@@ -11,7 +11,7 @@ networks:
 services:
   service:
     #build: ./service
-    image: tasks-service:local
+    image: registry.jahiduls.mint/tasks-service:local
     container_name: tasks-service
     restart: unless-stopped
     networks:
@@ -21,18 +21,20 @@ services:
       - 80
     labels:
       - traefik.enable=true
-      - traefik.http.routers.tasks-service.entryPoints=websecure
+      - traefik.docker.network=traefik
+      - traefik.http.routers.tasks-service.entrypoints=websecure
       - traefik.http.routers.tasks-service.rule=Host(`tasks.jahiduls.mint`) && PathPrefix(`/api`)
       - traefik.http.routers.tasks-service.tls=true
       - traefik.http.routers.tasks-service.middlewares=tasks-service-stripprefix@docker
       - traefik.http.middlewares.tasks-service-stripprefix.stripprefix.prefixes=/api
   openapi:
-    image: swaggerapi/swagger-ui:latest
+    image: registry.jahiduls.mint/swaggerapi/swagger-ui:latest
     container_name: tasks-openapi
     restart: unless-stopped
     networks:
       - traefik
     environment:
+      - BASE_URL=/openapi
       - SWAGGER_JSON=/var/specs/tasks.yaml
     volumes:
       - ./spec:/var/specs:ro
@@ -41,15 +43,15 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.tasks-openapi.rule=Host(`tasks.jahiduls.mint`) && PathPrefix(`/openapi`)
-      - traefik.http.routers.tasks-openapi.entryPoints=websecure
+      - traefik.http.routers.tasks-openapi.entrypoints=websecure
       - traefik.http.routers.tasks-openapi.tls=true
       - traefik.http.routers.tasks-openapi.service=tasks-openapi@docker
       - traefik.http.services.tasks-openapi.loadbalancer.server.port=8080
-      - traefik.http.routers.tasks-openapi.middlewares=tasks-openapi-stripprefix@docker
-      - traefik.http.middlewares.tasks-openapi-stripprefix.stripprefix.prefixes=/openapi
+      #- traefik.http.routers.tasks-openapi.middlewares=tasks-openapi-stripprefix@docker
+      #- traefik.http.middlewares.tasks-openapi-stripprefix.stripprefix.prefixes=/openapi
   client:
     build: ./client
-    image: tasks-ui:local
+    image: registry.jahiduls.mint/tasks-ui:local
     container_name: tasks-ui
     restart: unless-stopped
     networks:
@@ -59,5 +61,8 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.tasks-ui.rule=Host(`tasks.jahiduls.mint`)
-      - traefik.http.routers.tasks-ui.entryPoints=websecure
+      - traefik.http.routers.tasks-ui.entrypoints=websecure
       - traefik.http.routers.tasks-ui.tls=true
+      - traefik.http.routers.tasks-ui-http.rule=Host(`tasks.jahiduls.mint`)
+      - traefik.http.routers.tasks-ui-http.entrypoints=web
+      - traefik.http.routers.tasks-ui-http.middlewares=https-redirect@docker
