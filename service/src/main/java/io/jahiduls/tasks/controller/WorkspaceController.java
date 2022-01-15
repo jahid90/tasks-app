@@ -1,7 +1,10 @@
 package io.jahiduls.tasks.controller;
 
 import io.jahiduls.tasks.exceptions.NotYetImplementedException;
+import io.jahiduls.tasks.handlers.WorkspaceHandler;
 import io.jahiduls.tasks.resource.WorkspaceResource;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,8 +23,11 @@ import java.util.Optional;
 
 @Slf4j
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/workspace")
 public class WorkspaceController {
+
+    private final WorkspaceHandler handler;
 
     @GetMapping("")
     public List<WorkspaceResource> fetchAllWorkspaces(@PathParam("page") final Optional<Integer> page) {
@@ -33,8 +39,8 @@ public class WorkspaceController {
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createWorkspace(@RequestBody final WorkspaceResource workspace) {
-        throw new NotYetImplementedException();
+    public void createWorkspace(@RequestBody @NonNull final WorkspaceResource workspace) throws Exception {
+        handler.createWorkspace(workspace);
     }
 
     @GetMapping("/{id}")
