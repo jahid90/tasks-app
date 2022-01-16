@@ -1,11 +1,12 @@
 import React from 'react';
+import { Col } from 'react-bootstrap';
 
 const Workspace = ({ id }) => {
     return (
-        <div>
-            This is workspace {id}
-        </div>
-    )
-}
+        <Col>
+            <div>This is workspace {id}</div>
+        </Col>
+    );
+};
 
 export default Workspace;
