@@ -1,0 +1,12 @@
+version: 6
+commands:
+  build:
+    description: build the app
+    steps:
+      - name: build the app
+        run: pnpm build
+  docker:build:
+    description: build a docker image
+    steps:
+      - name: build the image
+        run: docker build -t registry.jahiduls.mint/tasks-ui:local .
