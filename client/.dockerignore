@@ -1,0 +1,7 @@
+build/
+node_modules/
+docker-compose.yml
+Dockerfile
+Dockerfile.dev
+just.yaml
+README.md

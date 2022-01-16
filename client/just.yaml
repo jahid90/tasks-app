@@ -1,12 +1,17 @@
 version: 6
 commands:
-  build:
-    description: build the app
+  dev:run:
+    description: run the app for developement environment
     steps:
-      - name: build the app
-        run: pnpm build
+      - name: run the app
+        run: docker-compose up -d
+  dev:stop:
+    description: stop the app run for developement environment
+    steps:
+      - name: stop the app
+        run: docker-compose down
   docker:build:
     description: build a docker image
     steps:
       - name: build the image
-        run: docker build -t registry.jahiduls.mint/tasks-ui:local .
+        run: docker build -t registry.jahiduls.mint/tasks-ui:local -f Dockerfile.dev .

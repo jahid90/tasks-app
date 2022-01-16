@@ -1,0 +1,32 @@
+version: '3'
+
+networks:
+  traefik:
+    name: traefik
+    driver: bridge
+
+services:
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: registry.jahiduls.mint/tasks-ui:dev
+    container_name: tasks-ui
+    restart: unless-stopped
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - PORT=80
+    networks:
+      - traefik
+    expose:
+      - 80
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.tasks-ui.rule=Host(`tasks.jahiduls.mint`)
+      - traefik.http.routers.tasks-ui.entrypoints=websecure
+      - traefik.http.routers.tasks-ui.tls=true
+      - traefik.http.routers.tasks-ui-http.rule=Host(`tasks.jahiduls.mint`)
+      - traefik.http.routers.tasks-ui-http.entrypoints=web
+      - traefik.http.routers.tasks-ui-http.middlewares=https-redirect@docker
