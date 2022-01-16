@@ -25,8 +25,11 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'io.cloudevents:cloudevents-spring:2.2.0'
-	implementation 'io.cloudevents:cloudevents-http-basic:2.2.0'
+	implementation 'org.springframework.boot:spring-boot-starter-amqp';
+	// implementation 'org.springframework.cloud:spring-cloud-function-core'
+	implementation 'io.cloudevents:cloudevents-spring:2.3.0'
+	implementation 'io.cloudevents:cloudevents-json-jackson:2.3.0'
+	// implementation 'io.cloudevents:cloudevents-http-basic:2.3.0'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

@@ -40,7 +40,7 @@ public class WorkspaceController {
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public void createWorkspace(@RequestBody @NonNull final WorkspaceResource workspace) throws Exception {
-        handler.createWorkspace(workspace);
+        handler.handleCreate(workspace);
     }
 
     @GetMapping("/{id}")
