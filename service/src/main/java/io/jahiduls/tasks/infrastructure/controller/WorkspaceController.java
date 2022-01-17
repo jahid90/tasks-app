@@ -30,11 +30,11 @@ public class WorkspaceController {
     private final WorkspaceHandler handler;
 
     @GetMapping("")
-    public List<WorkspaceResource> fetchAllWorkspaces(@PathParam("page") final Optional<Integer> page) {
+    public List<WorkspaceResource> fetchAllWorkspaces(@PathParam("page") final Optional<Integer> page) throws Exception {
 
         page.ifPresent(pageNum -> log.info("Looking for page number: {}", pageNum));
 
-        throw new NotYetImplementedException();
+        return handler.handleFetchAll();
     }
 
     @PostMapping("")
