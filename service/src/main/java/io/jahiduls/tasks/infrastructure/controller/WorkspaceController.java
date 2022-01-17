@@ -1,8 +1,8 @@
-package io.jahiduls.tasks.controller;
+package io.jahiduls.tasks.infrastructure.controller;
 
-import io.jahiduls.tasks.exceptions.NotYetImplementedException;
-import io.jahiduls.tasks.handlers.WorkspaceHandler;
-import io.jahiduls.tasks.resource.WorkspaceResource;
+import io.jahiduls.tasks.infrastructure.exceptions.NotYetImplementedException;
+import io.jahiduls.tasks.infrastructure.handlers.WorkspaceHandler;
+import io.jahiduls.tasks.infrastructure.resource.WorkspaceResource;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -39,8 +39,8 @@ public class WorkspaceController {
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createWorkspace(@RequestBody @NonNull final WorkspaceResource workspace) throws Exception {
-        handler.handleCreate(workspace);
+    public void createWorkspace(@RequestBody @NonNull final WorkspaceResource resource) throws Exception {
+        handler.handleCreate(resource);
     }
 
     @GetMapping("/{id}")
@@ -49,7 +49,7 @@ public class WorkspaceController {
     }
 
     @PutMapping("/{id}")
-    public void updateWorkspace(@PathVariable final String id, @RequestBody final WorkspaceResource workspace) {
+    public void updateWorkspace(@PathVariable final String id, @RequestBody final WorkspaceResource resource) {
         throw new NotYetImplementedException();
     }
 

@@ -1,7 +1,7 @@
-package io.jahiduls.tasks.controller;
+package io.jahiduls.tasks.infrastructure.controller;
 
-import io.jahiduls.tasks.exceptions.NotYetImplementedException;
-import io.jahiduls.tasks.resource.BoardResource;
+import io.jahiduls.tasks.infrastructure.exceptions.NotYetImplementedException;
+import io.jahiduls.tasks.infrastructure.resource.BoardResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

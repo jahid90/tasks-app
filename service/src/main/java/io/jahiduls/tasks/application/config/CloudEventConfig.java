@@ -1,4 +1,4 @@
-package io.jahiduls.tasks.config;
+package io.jahiduls.tasks.application.config;
 
 import io.cloudevents.core.v1.CloudEventBuilder;
 import lombok.Setter;
@@ -21,13 +21,13 @@ public class CloudEventConfig {
 
     @Setter
     @Value("${tasks.cloudevent.type}")
-    private String CLOUD_EVENT_TYPE;
+    private String CLOUD_EVENT_DEFAULT_TYPE;
 
     @Bean
     public CloudEventBuilder cloudEventBuilder() {
         final CloudEventBuilder builder = new CloudEventBuilder();
         builder.withSource(URI.create(CLOUD_EVENT_DEFAULT_SOURCE))
-                .withType(CLOUD_EVENT_TYPE)
+                .withType(CLOUD_EVENT_DEFAULT_TYPE)
                 .withDataContentType(CLOUD_EVENT_DATA_CONTENT_TYPE);
 
         return builder;

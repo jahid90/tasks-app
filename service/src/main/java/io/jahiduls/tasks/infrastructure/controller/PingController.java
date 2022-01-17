@@ -1,4 +1,4 @@
-package io.jahiduls.tasks.controller;
+package io.jahiduls.tasks.infrastructure.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
