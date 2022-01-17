@@ -1,5 +1,7 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, Col, Form } from 'react-bootstrap';
+import { v4 as uuid } from 'uuid';
 
 const AddWorkspace = () => {
     const [name, setName] = useState('');
@@ -13,10 +15,18 @@ const AddWorkspace = () => {
         setDescription(e.target.value);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(`submitted: name=${name} description=${description}`);
+        if (!name && !description) return;
+
+        console.debug(`submitted: name=${name} description=${description}`);
+
+        await axios.post(`https://tasks.jahiduls.mint/api/workspace`, {
+            uuid: uuid(),
+            name,
+            description,
+        });
 
         setName('');
         setDescription('');

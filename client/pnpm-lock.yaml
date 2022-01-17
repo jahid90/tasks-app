@@ -5,6 +5,7 @@ specifiers:
   '@testing-library/jest-dom': 5.16.1
   '@testing-library/react': 12.1.2
   '@testing-library/user-event': 13.5.0
+  axios: ^0.24.0
   bootstrap: ^5.1.3
   eslint: 7.11.0
   eslint-config-airbnb: ^19.0.4
@@ -15,13 +16,16 @@ specifiers:
   react-bootstrap: ^2.1.1
   react-dom: 17.0.2
   react-scripts: 4.0.3
+  uuid: ^8.3.2
   web-vitals: 2.1.3
 
 dependencies:
+  axios: 0.24.0
   bootstrap: 5.1.3
   react: 17.0.2
   react-bootstrap: 2.1.1_react-dom@17.0.2+react@17.0.2
   react-dom: 17.0.2_react@17.0.2
+  uuid: 8.3.2
   web-vitals: 2.1.3
 
 devDependencies:
@@ -3836,6 +3840,14 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /axios/0.24.0:
+    resolution: {integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==}
+    dependencies:
+      follow-redirects: 1.14.7
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /axobject-query/2.2.0:
     resolution: {integrity: sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA==}
     dev: true
@@ -6493,7 +6505,7 @@ packages:
       readable-stream: 2.3.7
     dev: true
 
-  /follow-redirects/1.14.7_debug@4.3.3:
+  /follow-redirects/1.14.7:
     resolution: {integrity: sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ==}
     engines: {node: '>=4.0'}
     peerDependencies:
@@ -6501,9 +6513,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dependencies:
-      debug: 4.3.3_supports-color@6.1.0
-    dev: true
 
   /for-in/1.0.2:
     resolution: {integrity: sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=}
@@ -7035,7 +7044,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.14.7_debug@4.3.3
+      follow-redirects: 1.14.7
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -12351,7 +12360,6 @@ packages:
   /uuid/8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
-    dev: true
 
   /v8-compile-cache/2.3.0:
     resolution: {integrity: sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==}
