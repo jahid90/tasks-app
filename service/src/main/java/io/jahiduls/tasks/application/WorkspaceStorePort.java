@@ -7,5 +7,6 @@ import java.util.List;
 public interface WorkspaceStorePort {
     void save(Workspace workspace);
     Workspace fetch(String uuid);
+    Workspace fetchByRefId(String id);
     List<Workspace> fetchAll();
 }

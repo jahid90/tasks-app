@@ -44,8 +44,8 @@ public class WorkspaceController {
     }
 
     @GetMapping("/{id}")
-    public WorkspaceDto fetchWorkspace(@PathVariable final String id) {
-        throw new NotYetImplementedException();
+    public WorkspaceDto fetchWorkspace(@PathVariable final String id) throws Exception {
+        return handler.handleFetchOne(id);
     }
 
     @PutMapping("/{id}")
