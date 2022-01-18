@@ -1,10 +1,10 @@
-package io.jahiduls.tasks.infrastructure.messaging;
+package io.jahiduls.tasks.infrastructure.adapters.messaging;
 
 import io.cloudevents.CloudEvent;
 import io.cloudevents.core.provider.EventFormatProvider;
 import io.cloudevents.jackson.JsonFormat;
 import io.jahiduls.tasks.application.MessageQueuePort;
-import io.jahiduls.tasks.infrastructure.config.RabbitMQConfig;
+import io.jahiduls.tasks.infrastructure.configs.RabbitMQConfig;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package io.jahiduls.tasks.infrastructure.config;
+package io.jahiduls.tasks.infrastructure.configs;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

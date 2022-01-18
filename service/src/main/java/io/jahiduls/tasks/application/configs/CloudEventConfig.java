@@ -1,4 +1,4 @@
-package io.jahiduls.tasks.application.config;
+package io.jahiduls.tasks.application.configs;
 
 import io.cloudevents.core.v1.CloudEventBuilder;
 import lombok.Setter;
