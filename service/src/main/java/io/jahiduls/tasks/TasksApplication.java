@@ -1,6 +1,6 @@
 package io.jahiduls.tasks;
 
-import io.jahiduls.tasks.application.WorkspaceStorePort;
+import io.jahiduls.tasks.application.ports.WorkspaceStorePort;
 import io.jahiduls.tasks.core.Workspace;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

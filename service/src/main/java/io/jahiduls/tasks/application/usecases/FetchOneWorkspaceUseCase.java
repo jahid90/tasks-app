@@ -2,16 +2,13 @@ package io.jahiduls.tasks.application.usecases;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.cloudevents.CloudEvent;
-import io.jahiduls.tasks.application.EventBuilder;
-import io.jahiduls.tasks.application.MessageQueuePort;
-import io.jahiduls.tasks.application.WorkspaceStorePort;
+import io.jahiduls.tasks.application.events.EventBuilder;
+import io.jahiduls.tasks.application.ports.MessageQueuePort;
+import io.jahiduls.tasks.application.ports.WorkspaceStorePort;
 import io.jahiduls.tasks.application.resources.WorkspaceDto;
 import io.jahiduls.tasks.core.Workspace;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor

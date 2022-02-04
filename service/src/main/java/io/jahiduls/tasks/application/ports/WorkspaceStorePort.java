@@ -1,4 +1,4 @@
-package io.jahiduls.tasks.application;
+package io.jahiduls.tasks.application.ports;
 
 import io.jahiduls.tasks.core.Workspace;
 
