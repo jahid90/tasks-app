@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@babel/eslint-parser': ^7.16.5
   '@testing-library/jest-dom': 5.16.2
-  '@testing-library/react': 12.1.2
+  '@testing-library/react': 12.1.3
   '@testing-library/user-event': 13.5.0
   axios: 0.25.0
   bootstrap: ^5.1.3
@@ -31,7 +31,7 @@ dependencies:
 devDependencies:
   '@babel/eslint-parser': 7.16.5_eslint@7.32.0
   '@testing-library/jest-dom': 5.16.2
-  '@testing-library/react': 12.1.2_react-dom@17.0.2+react@17.0.2
+  '@testing-library/react': 12.1.3_react-dom@17.0.2+react@17.0.2
   '@testing-library/user-event': 13.5.0
   eslint: 7.32.0
   eslint-config-airbnb: 19.0.4_5429c46d75d8c18a8897a831475c306e
@@ -2963,8 +2963,8 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/react/12.1.2_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-ihQiEOklNyHIpo2Y8FREkyD1QAea054U0MVbwH1m8N9TxeFz+KoJ9LkqoKqJlzx2JDm56DVwaJ1r36JYxZM05g==}
+  /@testing-library/react/12.1.3_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-oCULRXWRrBtC9m6G/WohPo1GLcLesH7T4fuKzRAKn1CWVu9BzXtqLXDDTA6KhFNNtRwLtfSMr20HFl+Qrdrvmg==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '*'
@@ -2972,6 +2972,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.16.7
       '@testing-library/dom': 8.11.2
+      '@types/react-dom': 17.0.11
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: true
@@ -3112,10 +3113,15 @@ packages:
 
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
-    dev: false
 
   /@types/q/1.5.5:
     resolution: {integrity: sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==}
+    dev: true
+
+  /@types/react-dom/17.0.11:
+    resolution: {integrity: sha512-f96K3k+24RaLGVu/Y2Ng3e1EbZ8/cVJvypZWd7cy0ofCBaf2lcM46xNhycMZ2xGwbBjRql7hOlZ+e2WlJ5MH3Q==}
+    dependencies:
+      '@types/react': 17.0.38
     dev: true
 
   /@types/react-transition-group/4.4.4:
@@ -3130,7 +3136,6 @@ packages:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
       csstype: 3.0.10
-    dev: false
 
   /@types/resolve/0.0.8:
     resolution: {integrity: sha512-auApPaJf3NPfe18hSoJkp8EbZzer2ISk7o8mCC3M9he/a04+gbMF97NkpD2S8riMGvm4BMRI59/SZQSaLTKpsQ==}
@@ -3140,7 +3145,6 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: false
 
   /@types/source-list-map/0.1.2:
     resolution: {integrity: sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==}
@@ -5284,7 +5288,6 @@ packages:
 
   /csstype/3.0.10:
     resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
-    dev: false
 
   /cyclist/1.0.1:
     resolution: {integrity: sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=}
