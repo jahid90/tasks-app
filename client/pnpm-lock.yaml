@@ -1,41 +1,41 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@babel/eslint-parser': ^7.16.5
+  '@babel/eslint-parser': 7.17.0
   '@testing-library/jest-dom': 5.16.2
   '@testing-library/react': 12.1.3
   '@testing-library/user-event': 13.5.0
   axios: 0.26.0
-  bootstrap: ^5.1.3
+  bootstrap: 5.1.3
   eslint: 7.32.0
-  eslint-config-airbnb: ^19.0.4
-  eslint-config-prettier: ^8.3.0
-  eslint-plugin-react: ^7.28.0
-  pretty-quick: ^3.1.3
+  eslint-config-airbnb: 19.0.4
+  eslint-config-prettier: 8.4.0
+  eslint-plugin-react: 7.28.0
+  pretty-quick: 3.1.3
   react: 17.0.2
-  react-bootstrap: ^2.1.1
+  react-bootstrap: 2.1.2
   react-dom: 17.0.2
   react-scripts: 4.0.3
-  uuid: ^8.3.2
+  uuid: 8.3.2
   web-vitals: 2.1.4
 
 dependencies:
   axios: 0.26.0
   bootstrap: 5.1.3
   react: 17.0.2
-  react-bootstrap: 2.1.1_react-dom@17.0.2+react@17.0.2
+  react-bootstrap: 2.1.2_react-dom@17.0.2+react@17.0.2
   react-dom: 17.0.2_react@17.0.2
   uuid: 8.3.2
   web-vitals: 2.1.4
 
 devDependencies:
-  '@babel/eslint-parser': 7.16.5_eslint@7.32.0
+  '@babel/eslint-parser': 7.17.0_eslint@7.32.0
   '@testing-library/jest-dom': 5.16.2
   '@testing-library/react': 12.1.3_react-dom@17.0.2+react@17.0.2
   '@testing-library/user-event': 13.5.0
   eslint: 7.32.0
   eslint-config-airbnb: 19.0.4_5429c46d75d8c18a8897a831475c306e
-  eslint-config-prettier: 8.3.0_eslint@7.32.0
+  eslint-config-prettier: 8.4.0_eslint@7.32.0
   eslint-plugin-react: 7.28.0_eslint@7.32.0
   pretty-quick: 3.1.3
   react-scripts: 4.0.3_react@17.0.2
@@ -83,7 +83,7 @@ packages:
       gensync: 1.0.0-beta.2
       json5: 2.2.0
       lodash: 4.17.21
-      resolve: 1.18.1
+      resolve: 1.21.0
       semver: 5.7.1
       source-map: 0.5.7
     transitivePeerDependencies:
@@ -113,8 +113,8 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/eslint-parser/7.16.5_eslint@7.32.0:
-    resolution: {integrity: sha512-mUqYa46lgWqHKQ33Q6LNCGp/wPR3eqOYTUixHFsfrSQqRxH0+WOzca75iEjFr5RDGH1dDz622LaHhLOzOuQRUA==}
+  /@babel/eslint-parser/7.17.0_eslint@7.32.0:
+    resolution: {integrity: sha512-PUEJ7ZBXbRkbq3qqM/jZ2nIuakUBqCYc7Qf52Lj7dlZ6zERnqisdHioL0l4wwQZnmskMeasqUNzLBFKs3nylXA==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': '>=7.11.0'
@@ -2750,8 +2750,8 @@ packages:
       react: 17.0.2
     dev: false
 
-  /@restart/ui/0.2.5_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-3dP8pMFickPpvAG5MVQW53HnJl0c17h7MwvI4nNy9QF66sHSYVchudlqlI8eOSaqnmc5YVjGura63vMb9LTNbQ==}
+  /@restart/ui/1.0.1_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-hLAqltcAjQYtjGuHBHKyPpR3ScTxzdkSYNvniwBfN7rUDbYiHu/UZiI1hvV2idJeUvktRnz29l7W9BnNLHrG6Q==}
     peerDependencies:
       react: '>=16.14.0'
       react-dom: '>=16.14.0'
@@ -3898,7 +3898,7 @@ packages:
       '@babel/types': 7.16.8
       eslint: 7.32.0
       eslint-visitor-keys: 1.3.0
-      resolve: 1.18.1
+      resolve: 1.21.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5877,8 +5877,8 @@ packages:
       object.entries: 1.1.5
     dev: true
 
-  /eslint-config-prettier/8.3.0_eslint@7.32.0:
-    resolution: {integrity: sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew==}
+  /eslint-config-prettier/8.4.0_eslint@7.32.0:
+    resolution: {integrity: sha512-CFotdUcMY18nGRo5KGsnNxpznzhkopOcOo0InID+sgQssPrzjvsyKZPvOgymTFeHrFuC3Tzdf2YndhXtULK9Iw==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
@@ -8023,7 +8023,7 @@ packages:
       jest-pnp-resolver: 1.2.2_jest-resolve@26.6.0
       jest-util: 26.6.2
       read-pkg-up: 7.0.1
-      resolve: 1.18.1
+      resolve: 1.21.0
       slash: 3.0.0
     dev: true
 
@@ -10508,15 +10508,15 @@ packages:
       whatwg-fetch: 3.6.2
     dev: true
 
-  /react-bootstrap/2.1.1_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-Igagk6LziNW/HgBlMVx+QiwPVt/oqrZ7tiBKgv31VYc/56kJEU0Y+BCJS6hrQP6QmmIpdVtX8TRaanv9xsmW5A==}
+  /react-bootstrap/2.1.2_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-E7PR13cVsEW70gw08BWplENwn6PHTshskOsQygZqyc65jQlsnr9MsmuW/lgzAN2OiMBnc0KaNpuZ/FohL7dchw==}
     peerDependencies:
       react: '>=16.14.0'
       react-dom: '>=16.14.0'
     dependencies:
       '@babel/runtime': 7.16.7
       '@restart/hooks': 0.4.5_react@17.0.2
-      '@restart/ui': 0.2.5_react-dom@17.0.2+react@17.0.2
+      '@restart/ui': 1.0.1_react-dom@17.0.2+react@17.0.2
       '@types/invariant': 2.2.35
       '@types/prop-types': 15.7.4
       '@types/react': 17.0.38
