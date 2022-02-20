@@ -4,12 +4,12 @@ on:
   push:
     branches: [main]
     paths:
-      - client
+      - client/**
       - .github/workflows/client.yml
   pull_request:
     branches: [main]
     paths:
-      - client
+      - client/**
       - .github/workflows/client.yml
 
 defaults:
