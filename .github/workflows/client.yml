@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - client
+      - .github/workflows/client.yml
   pull_request:
     branches: [main]
     paths:
       - client
+      - .github/workflows/client.yml
 
 defaults:
   run:
