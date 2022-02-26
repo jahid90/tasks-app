@@ -10,7 +10,7 @@ specifiers:
   eslint: 8.10.0
   eslint-config-airbnb: 19.0.4
   eslint-config-prettier: 8.4.0
-  eslint-plugin-react: 7.29.1
+  eslint-plugin-react: 7.29.2
   pretty-quick: 3.1.3
   react: 17.0.2
   react-bootstrap: 2.1.2
@@ -34,9 +34,9 @@ devDependencies:
   '@testing-library/react': 12.1.3_react-dom@17.0.2+react@17.0.2
   '@testing-library/user-event': 13.5.0
   eslint: 8.10.0
-  eslint-config-airbnb: 19.0.4_c53bbff47707e236b1931ba7aafa0a9b
+  eslint-config-airbnb: 19.0.4_3435edc8fc96a219f6ee6844f11b6362
   eslint-config-prettier: 8.4.0_eslint@8.10.0
-  eslint-plugin-react: 7.29.1_eslint@8.10.0
+  eslint-plugin-react: 7.29.2_eslint@8.10.0
   pretty-quick: 3.1.3
   react-scripts: 5.0.0_react@17.0.2
 
@@ -4278,7 +4278,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-config-airbnb/19.0.4_c53bbff47707e236b1931ba7aafa0a9b:
+  /eslint-config-airbnb/19.0.4_3435edc8fc96a219f6ee6844f11b6362:
     resolution: {integrity: sha512-T75QYQVQX57jiNgpF9r1KegMICE94VYwoFQyMGhrvc+lB8YF2E/M/PYDaQe1AJcWaEgqLE+ErXV1Og/+6Vyzew==}
     engines: {node: ^10.12.0 || ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -4290,7 +4290,7 @@ packages:
     dependencies:
       eslint: 8.10.0
       eslint-config-airbnb-base: 15.0.0_eslint@8.10.0
-      eslint-plugin-react: 7.29.1_eslint@8.10.0
+      eslint-plugin-react: 7.29.2_eslint@8.10.0
       object.assign: 4.1.2
       object.entries: 1.1.5
     dev: true
@@ -4322,7 +4322,7 @@ packages:
       eslint-plugin-import: 2.25.4_eslint@8.10.0
       eslint-plugin-jest: 25.7.0_4e89c3de38e95f468e214b905ec928b1
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.10.0
-      eslint-plugin-react: 7.29.1_eslint@8.10.0
+      eslint-plugin-react: 7.29.2_eslint@8.10.0
       eslint-plugin-react-hooks: 4.3.0_eslint@8.10.0
       eslint-plugin-testing-library: 5.0.5_eslint@8.10.0
     transitivePeerDependencies:
@@ -4435,8 +4435,8 @@ packages:
       eslint: 8.10.0
     dev: true
 
-  /eslint-plugin-react/7.29.1_eslint@8.10.0:
-    resolution: {integrity: sha512-WtzRpHMhsOX05ZrkyaaqmLl2uXGqmYooCfBxftJKlkYdsltiufGgfU7uuoHwR2lBam2Kh/EIVID4aU9e3kbCMA==}
+  /eslint-plugin-react/7.29.2_eslint@8.10.0:
+    resolution: {integrity: sha512-ypEBTKOy5liFQXZWMchJ3LN0JX1uPI6n7MN7OPHKacqXAxq5gYC30TdO7wqGYQyxD1OrzpobdHC3hDmlRWDg9w==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
