@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@babel/eslint-parser': 7.17.0
   '@testing-library/jest-dom': 5.16.2
-  '@testing-library/react': 12.1.3
+  '@testing-library/react': 12.1.4
   '@testing-library/user-event': 13.5.0
   axios: 0.26.0
   bootstrap: 5.1.3
@@ -31,7 +31,7 @@ dependencies:
 devDependencies:
   '@babel/eslint-parser': 7.17.0_eslint@8.10.0
   '@testing-library/jest-dom': 5.16.2
-  '@testing-library/react': 12.1.3_react-dom@17.0.2+react@17.0.2
+  '@testing-library/react': 12.1.4_react-dom@17.0.2+react@17.0.2
   '@testing-library/user-event': 13.5.0
   eslint: 8.10.0
   eslint-config-airbnb: 19.0.4_d970d3645ca34f26f5bd106fda891436
@@ -2050,7 +2050,7 @@ packages:
       chalk: 4.1.2
       dom-accessibility-api: 0.5.10
       lz-string: 1.4.4
-      pretty-format: 27.4.6
+      pretty-format: 27.5.1
     dev: true
 
   /@testing-library/jest-dom/5.16.2:
@@ -2068,14 +2068,14 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/react/12.1.3_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-oCULRXWRrBtC9m6G/WohPo1GLcLesH7T4fuKzRAKn1CWVu9BzXtqLXDDTA6KhFNNtRwLtfSMr20HFl+Qrdrvmg==}
+  /@testing-library/react/12.1.4_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-jiPKOm7vyUw311Hn/HlNQ9P8/lHNtArAx0PisXyFixDDvfl8DbD6EUdbshK5eqauvBSvzZd19itqQ9j3nferJA==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '*'
       react-dom: '*'
     dependencies:
-      '@babel/runtime': 7.16.7
+      '@babel/runtime': 7.17.2
       '@testing-library/dom': 8.11.2
       '@types/react-dom': 17.0.11
       react: 17.0.2
@@ -7818,15 +7818,6 @@ packages:
     dependencies:
       lodash: 4.17.21
       renderkid: 3.0.0
-    dev: true
-
-  /pretty-format/27.4.6:
-    resolution: {integrity: sha512-NblstegA1y/RJW2VyML+3LlpFjzx62cUrtBIKIWDXEDkjNeleA7Od7nrzcs/VLQvAeV4CgSYhrN39DRN88Qi/g==}
-    engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
-    dependencies:
-      ansi-regex: 5.0.1
-      ansi-styles: 5.2.0
-      react-is: 17.0.2
     dev: true
 
   /pretty-format/27.5.1:
