@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@babel/eslint-parser': 7.18.2
+  '@babel/eslint-parser': 7.18.9
   '@testing-library/jest-dom': 5.16.4
   '@testing-library/react': 13.3.0
   '@testing-library/user-event': 14.2.5
@@ -29,7 +29,7 @@ dependencies:
   web-vitals: 2.1.4
 
 devDependencies:
-  '@babel/eslint-parser': 7.18.2_eslint@8.20.0
+  '@babel/eslint-parser': 7.18.9_eslint@8.20.0
   '@testing-library/jest-dom': 5.16.4
   '@testing-library/react': 13.3.0_react-dom@18.2.0+react@18.2.0
   '@testing-library/user-event': 14.2.5
@@ -89,8 +89,8 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/eslint-parser/7.18.2_@babel+core@7.16.7+eslint@8.20.0:
-    resolution: {integrity: sha512-oFQYkE8SuH14+uR51JVAmdqwKYXGRjEXx7s+WiagVjqQ+HPE+nnwyF2qlVG8evUsUHmPcA+6YXMEDbIhEyQc5A==}
+  /@babel/eslint-parser/7.18.9_@babel+core@7.16.7+eslint@8.20.0:
+    resolution: {integrity: sha512-KzSGpMBggz4fKbRbWLNyPVTuQr6cmCcBhOyXTw/fieOVaw5oYAwcAj4a7UKcDYCPxQq+CG1NCDZH9e2JTXquiQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': '>=7.11.0'
@@ -103,8 +103,8 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /@babel/eslint-parser/7.18.2_eslint@8.20.0:
-    resolution: {integrity: sha512-oFQYkE8SuH14+uR51JVAmdqwKYXGRjEXx7s+WiagVjqQ+HPE+nnwyF2qlVG8evUsUHmPcA+6YXMEDbIhEyQc5A==}
+  /@babel/eslint-parser/7.18.9_eslint@8.20.0:
+    resolution: {integrity: sha512-KzSGpMBggz4fKbRbWLNyPVTuQr6cmCcBhOyXTw/fieOVaw5oYAwcAj4a7UKcDYCPxQq+CG1NCDZH9e2JTXquiQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': '>=7.11.0'
@@ -4336,7 +4336,7 @@ packages:
         optional: true
     dependencies:
       '@babel/core': 7.16.7
-      '@babel/eslint-parser': 7.18.2_@babel+core@7.16.7+eslint@8.20.0
+      '@babel/eslint-parser': 7.18.9_@babel+core@7.16.7+eslint@8.20.0
       '@rushstack/eslint-patch': 1.1.0
       '@typescript-eslint/eslint-plugin': 5.12.0_4f85232fab7e6d3399a945ecd0234d6e
       '@typescript-eslint/parser': 5.12.0_eslint@8.20.0
