@@ -4,7 +4,7 @@ specifiers:
   '@babel/eslint-parser': 7.18.9
   '@testing-library/jest-dom': 5.16.4
   '@testing-library/react': 13.3.0
-  '@testing-library/user-event': 14.4.0
+  '@testing-library/user-event': 14.4.1
   axios: 0.27.2
   bootstrap: 5.2.0
   eslint: 8.21.0
@@ -32,7 +32,7 @@ devDependencies:
   '@babel/eslint-parser': 7.18.9_eslint@8.21.0
   '@testing-library/jest-dom': 5.16.4
   '@testing-library/react': 13.3.0_react-dom@18.2.0+react@18.2.0
-  '@testing-library/user-event': 14.4.0
+  '@testing-library/user-event': 14.4.1
   eslint: 8.21.0
   eslint-config-airbnb: 19.0.4_f24f1c9b1934352274b818439c837bf7
   eslint-config-prettier: 8.5.0_eslint@8.21.0
@@ -2080,8 +2080,8 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: true
 
-  /@testing-library/user-event/14.4.0:
-    resolution: {integrity: sha512-S1QbHbTy8ROlYdvIlgnrfeaX7H8Xw73hAS8jpQ5bMx016idgr6J/7cWBFHD8o2Dxz4YjXOkkGYTapzbqWhCmyw==}
+  /@testing-library/user-event/14.4.1:
+    resolution: {integrity: sha512-Gr20dje1RaNxZ1ehHGPvFkLswfetBQKCfRD/lo6sUJQ52X2TV/QnqUpkjoShfEebrB2KiTPfQkcONwdQiofLhg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
