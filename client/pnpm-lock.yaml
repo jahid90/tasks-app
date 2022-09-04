@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@babel/eslint-parser': 7.18.9
   '@testing-library/jest-dom': 5.16.5
-  '@testing-library/react': 13.3.0
+  '@testing-library/react': 13.4.0
   '@testing-library/user-event': 14.4.3
   axios: 0.27.2
   bootstrap: 5.2.0
@@ -31,7 +31,7 @@ dependencies:
 devDependencies:
   '@babel/eslint-parser': 7.18.9_eslint@8.23.0
   '@testing-library/jest-dom': 5.16.5
-  '@testing-library/react': 13.3.0_react-dom@18.2.0+react@18.2.0
+  '@testing-library/react': 13.4.0_react-dom@18.2.0+react@18.2.0
   '@testing-library/user-event': 14.4.3
   eslint: 8.23.0
   eslint-config-airbnb: 19.0.4_ae95728541997c0fbe57b04b0a523cb9
@@ -2090,14 +2090,14 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/react/13.3.0_react-dom@18.2.0+react@18.2.0:
-    resolution: {integrity: sha512-DB79aA426+deFgGSjnf5grczDPiL4taK3hFaa+M5q7q20Kcve9eQottOG5kZ74KEr55v0tU2CQormSSDK87zYQ==}
+  /@testing-library/react/13.4.0_react-dom@18.2.0+react@18.2.0:
+    resolution: {integrity: sha512-sXOGON+WNTh3MLE9rve97ftaZukN3oNf2KjDy7YTx6hcTO2uuLHuCGynMDhFwGw/jYf4OJ2Qk0i4i79qMNNkyw==}
     engines: {node: '>=12'}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
-      '@babel/runtime': 7.17.2
+      '@babel/runtime': 7.18.9
       '@testing-library/dom': 8.11.2
       '@types/react-dom': 18.0.3
       react: 18.2.0
@@ -4064,7 +4064,7 @@ packages:
   /dom-helpers/5.2.1:
     resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
     dependencies:
-      '@babel/runtime': 7.17.2
+      '@babel/runtime': 7.18.9
       csstype: 3.0.10
     dev: false
 
@@ -6537,7 +6537,7 @@ packages:
     dev: true
 
   /lz-string/1.4.4:
-    resolution: {integrity: sha1-wNjq82BZ9wV5bh40SBHPTEmNOiY=}
+    resolution: {integrity: sha512-0ckx7ZHRPqb0oUm8zNr+90mtf9DQB60H1wMCjBtfi62Kl3a7JbHob6gA2bC+xRvZoOL+1hzUK8jeuEIQE8svEQ==}
     hasBin: true
     dev: true
 
@@ -8221,7 +8221,7 @@ packages:
       react: '>=16.6.0'
       react-dom: '>=16.6.0'
     dependencies:
-      '@babel/runtime': 7.17.2
+      '@babel/runtime': 7.18.9
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
@@ -9302,7 +9302,7 @@ packages:
     peerDependencies:
       react: '>=15.0.0'
     dependencies:
-      '@babel/runtime': 7.17.2
+      '@babel/runtime': 7.18.9
       '@types/react': 17.0.38
       invariant: 2.2.4
       react: 18.2.0
