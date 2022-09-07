@@ -6,7 +6,7 @@ specifiers:
   '@testing-library/react': 13.4.0
   '@testing-library/user-event': 14.4.3
   axios: 0.27.2
-  bootstrap: 5.2.0
+  bootstrap: 5.2.1
   eslint: 8.23.0
   eslint-config-airbnb: 19.0.4
   eslint-config-prettier: 8.5.0
@@ -21,7 +21,7 @@ specifiers:
 
 dependencies:
   axios: 0.27.2
-  bootstrap: 5.2.0
+  bootstrap: 5.2.1
   react: 18.2.0
   react-bootstrap: 2.5.0_react-dom@18.2.0+react@18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -3198,10 +3198,10 @@ packages:
     resolution: {integrity: sha1-aN/1++YMUes3cl6p4+0xDcwed24=}
     dev: true
 
-  /bootstrap/5.2.0:
-    resolution: {integrity: sha512-qlnS9GL6YZE6Wnef46GxGv1UpGGzAwO0aPL1yOjzDIJpeApeMvqV24iL+pjr2kU4dduoBA9fINKWKgMToobx9A==}
+  /bootstrap/5.2.1:
+    resolution: {integrity: sha512-UQi3v2NpVPEi1n35dmRRzBJFlgvWHYwyem6yHhuT6afYF+sziEt46McRbT//kVXZ7b1YUYEVGdXEH74Nx3xzGA==}
     peerDependencies:
-      '@popperjs/core': ^2.11.5
+      '@popperjs/core': ^2.11.6
     dev: false
 
   /brace-expansion/1.1.11:
