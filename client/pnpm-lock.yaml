@@ -17,7 +17,7 @@ specifiers:
   react-dom: 18.2.0
   react-scripts: 5.0.1
   uuid: 9.0.0
-  web-vitals: 3.0.2
+  web-vitals: 3.0.3
 
 dependencies:
   axios: 0.27.2
@@ -26,7 +26,7 @@ dependencies:
   react-bootstrap: 2.5.0_react-dom@18.2.0+react@18.2.0
   react-dom: 18.2.0_react@18.2.0
   uuid: 9.0.0
-  web-vitals: 3.0.2
+  web-vitals: 3.0.3
 
 devDependencies:
   '@babel/eslint-parser': 7.19.1_eslint@8.24.0
@@ -9464,8 +9464,8 @@ packages:
       minimalistic-assert: 1.0.1
     dev: true
 
-  /web-vitals/3.0.2:
-    resolution: {integrity: sha512-YygzeCdGpNrCHIjW14AI4SxMX2IcONhDvwhHc9KswCIixfSeVl08WdKDfzZaypq2ynRIG3lzGO3CO5dXYzc9+w==}
+  /web-vitals/3.0.3:
+    resolution: {integrity: sha512-8K6cl3alkVhwv7RQm3WAWFzvP9dBTH4CwOE7G3DfQDEnBJTdtNgX5XMqgE7aE79wac/kJ8fHWftUfH3AVxxbBw==}
     dev: false
 
   /webidl-conversions/4.0.2:
