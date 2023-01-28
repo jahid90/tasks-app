@@ -5,7 +5,7 @@ specifiers:
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0
   '@testing-library/user-event': 14.4.3
-  axios: 1.2.5
+  axios: 1.2.6
   bootstrap: 5.2.3
   eslint: 8.32.0
   eslint-config-airbnb: 19.0.4
@@ -20,7 +20,7 @@ specifiers:
   web-vitals: 3.1.1
 
 dependencies:
-  axios: 1.2.5
+  axios: 1.2.6
   bootstrap: 5.2.3
   react: 18.2.0
   react-bootstrap: 2.7.0_react-dom@18.2.0+react@18.2.0
@@ -2950,8 +2950,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /axios/1.2.5:
-    resolution: {integrity: sha512-9pU/8mmjSSOb4CXVsvGIevN+MlO/t9OWtKadTaLuN85Gge3HGorUckgp8A/2FH4V4hJ7JuQ3LIeI7KAV9ITZrQ==}
+  /axios/1.2.6:
+    resolution: {integrity: sha512-rC/7F08XxZwjMV4iuWv+JpD3E0Ksqg9nac4IIg6RwNuF0JTeWoCo/mBNG54+tNhhI11G3/VDRbdDQTs9hGp4pQ==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
