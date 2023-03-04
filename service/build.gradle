@@ -27,7 +27,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-amqp';
 	// implementation 'org.springframework.cloud:spring-cloud-function-core'
-	implementation 'io.cloudevents:cloudevents-spring:2.4.1'
+	implementation 'io.cloudevents:cloudevents-spring:2.4.2'
 	implementation 'io.cloudevents:cloudevents-json-jackson:2.4.2'
 	// implementation 'io.cloudevents:cloudevents-http-basic:2.3.0'
 	compileOnly 'org.projectlombok:lombok'
